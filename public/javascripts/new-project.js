@@ -105,7 +105,7 @@ $('#submit-project').on('click', function(){
         //Push all the intersections into an array
         var interArr = [];
         $('.Intersections').each(function() {
-            
+
             // Take out "United States" from at the end of intersections
             var tempAddress = $(this).val().replace(", United States", "");
 
@@ -163,6 +163,9 @@ $('#submit-project').on('click', function(){
         newProject.Constr_by = $('#Constr_by').val();
         newProject.Info_source = $('#Info_source').val();
         newProject.Access = $('#Access input[type="radio"]:checked').val();
+        newProject.ProjectStartDate = $('#StartDate').val();
+        newProject.ProjectProjectedCompletionDate = $('#ProjectedCompletionDate').val();
+        newProject.ProjectUnmetFunding = parseInt($('#Total_bgt').val()).toFixed(2) - (parseInt($('#Grant').val()).toFixed(2)+parseInt($('#Grant').val()).toFixed(2));
       }
 
       //Unfunded Attributes
@@ -221,15 +224,15 @@ $('#add-intersection').on('click', function() {
     input.addClass('Intersections');
     input.attr('placeholder', '');
     input.attr('id', 'cross-street' + intersectionCounter);
-    
-    var span = $('<span id="cross-street' + intersectionCounter + '-span" area-hidden="true">');        
+
+    var span = $('<span id="cross-street' + intersectionCounter + '-span" area-hidden="true">');
     span.css({
         "height": "100%",
         "right": "9px",
         "top": "0px"
     });
-    div.append(input);        
-    div.append(span);     
+    div.append(input);
+    div.append(span);
     div.append($("<span>Cross Street " + intersectionCounter + "</span>"));
     $('#intersections').append(div);
 
@@ -279,7 +282,7 @@ $("#btnUpload").on("click", function(){
       loadingGif.attr('src', '/images/loading.gif');
       $('#file-upload-group').append(loadingGif);
     };
-    
+
     xhr.onload = function(result){
       var details = JSON.parse(result.currentTarget.response);
       $('#file-upload-group').html("<p>" + details.origFileName + "</p><p>File Uploaded</p>");
