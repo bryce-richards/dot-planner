@@ -147,6 +147,7 @@ router.post('/new', function(req, res) {
       //req.body is does not come as a native object and therefore does not have Object.prototype methods
       //This is a work around to assign it as an object so we can use prototype methods below
       var newProject = JSON.parse(JSON.stringify(req.body));
+
       //Parse the projects geometry which was stringified on the front end
       var geometry = JSON.parse(newProject.Geometry);
       var coordinates = JSON.parse(geometry.coordinates);
