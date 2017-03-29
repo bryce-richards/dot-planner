@@ -42,7 +42,7 @@ for (var i = 0; i < dataSet.length; i++) {
 ```
 - From command line in /db directory, run `node load.js`
 
-To load data. You'll need the old ATB database zip file stored in a directory called `data` that will be ignored from git. 
+To load data. You'll need the old ATB database zip file stored in a directory called `data` that will be ignored from git.
 
 ```
 cd etl
@@ -51,7 +51,7 @@ cd etl
 
 ## Deploying
 
-Currently, the application is deploying on elastic beanstalk. To deploy, you'll need to configure your local repo by running `eb init`. 
+Currently, the application is deploying on elastic beanstalk. To deploy, you'll need to configure your local repo by running `eb init`.
 
 To deploy the codebase, simply run `eb deploy .`
 
