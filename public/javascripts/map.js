@@ -193,6 +193,7 @@ $('#radiusSlider').slider({
     globalRadius = valueInMiles;
     return valueInMiles;
   }
+
 });
 
 //---------------------------------------------
@@ -500,8 +501,6 @@ function filterByRadius(data) {
 
 
 function displayResults(results) {
-
-
 
     $('#main-info').empty();
     // show main info div
